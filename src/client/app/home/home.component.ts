@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InstagramService } from '../shared/instagram/instagram.service';
 
-/**
- * This class represents the lazy loaded HomeComponent.
- */
 @Component({
   moduleId: module.id,
   selector: 'sd-home',
@@ -14,43 +11,29 @@ export class HomeComponent implements OnInit {
 
   newName = '';
   errorMessage: string;
-  names: any;
+  instagramUser: any;
+  feed: any[];
 
-  /**
-   * Creates an instance of the HomeComponent with the injected
-   * NameListService.
-   *
-   * @param {NameListService} nameListService - The injected NameListService.
-   */
   constructor(public instagramService: InstagramService) {}
 
-  /**
-   * Get the names OnInit
-   */
   ngOnInit() {
-    this.getNames();
+    this.getInstagramUser();
+    this.getFeed();
   }
 
-  /**
-   * Handle the nameListService observable
-   */
-  getNames() {
-    this.instagramService.get()
+  getInstagramUser() {
+    this.instagramService.getInstagramUser()
       .subscribe(
-        names => this.names = names,
+        instagramUser => this.instagramUser = instagramUser,
         error => this.errorMessage = <any>error
       );
   }
 
-  /**
-   * Pushes a new name onto the names array
-   * @return {boolean} false to prevent default form submit behavior to refresh the page.
-   */
-  addName(): boolean {
-    // TODO: implement nameListService.post
-    this.names.push(this.newName);
-    this.newName = '';
-    return false;
+  getFeed() {
+    this.instagramService.getFeed()
+      .subscribe(
+        feed => this.feed = feed,
+        error => this.errorMessage = <any>error
+      );
   }
-
 }

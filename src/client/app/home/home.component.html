@@ -1,9 +1,8 @@
-<p>Howdy! Here's a list of awesome computer scientists. Do you know any others? Add to the list yourself.</p>
+{{ instagramUser.full_name }}
+{{ instagramUser.biography }}
 
-<form (submit)="addName()">
-  <input [(ngModel)]="newName" name="newName" placeholder="Awesome Computer Scientist">
-  <button type="submit">Add</button>
-</form>
-
-{{ names.full_name }}
-{{ names.biography }}
+<ul>
+  <li *ngFor="let feedItem of feed">
+    <img src="{{ feedItem.image_versions2.candidates[1].url }}" />
+  </li>
+</ul>

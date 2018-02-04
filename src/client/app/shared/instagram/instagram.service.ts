@@ -20,10 +20,16 @@ export class InstagramService {
    * Returns an Observable for the HTTP GET request for the JSON resource.
    * @return {string[]} The Observable for the HTTP request.
    */
-  get(): Observable<string[]> {
+  getInstagramUser(): Observable<string[]> {
     return this.http.get('http://localhost:8080/instagramuser')
        //             .do(data => console.log('server data:', data))  // debug
                     .catch(this.handleError);
+  }
+
+  getFeed(): Observable<string[]> {
+    return this.http.get('http://localhost:8080/feed')
+    //             .do(data => console.log('server data:', data))  // debug
+      .catch(this.handleError);
   }
 
   /**

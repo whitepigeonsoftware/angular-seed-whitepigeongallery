@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
  * This class provides the NameList service with methods to read names and add names.
  */
 @Injectable()
-export class NameListService {
+export class InstagramService {
 
   /**
    * Creates a new NameListService with the injected HttpClient.
@@ -21,8 +21,8 @@ export class NameListService {
    * @return {string[]} The Observable for the HTTP request.
    */
   get(): Observable<string[]> {
-    return this.http.get('assets/data.json')
-    //              .do(data => console.log('server data:', data))  // debug
+    return this.http.get('http://localhost:8080/instagramuser')
+       //             .do(data => console.log('server data:', data))  // debug
                     .catch(this.handleError);
   }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NameListService } from '../shared/name-list/name-list.service';
+import { InstagramService } from '../shared/instagram/instagram.service';
 
 /**
  * This class represents the lazy loaded HomeComponent.
@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   newName = '';
   errorMessage: string;
-  names: any[] = [];
+  names: any;
 
   /**
    * Creates an instance of the HomeComponent with the injected
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
    *
    * @param {NameListService} nameListService - The injected NameListService.
    */
-  constructor(public nameListService: NameListService) {}
+  constructor(public instagramService: InstagramService) {}
 
   /**
    * Get the names OnInit
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
    * Handle the nameListService observable
    */
   getNames() {
-    this.nameListService.get()
+    this.instagramService.get()
       .subscribe(
         names => this.names = names,
         error => this.errorMessage = <any>error

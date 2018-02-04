@@ -23,7 +23,7 @@ body {
 /* Set up a default font and some padding to provide breathing room */
 body {
   font-family: Oswald;
-  font-size: 24px;
+  font-size: 32px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;

@@ -1,8 +1,8 @@
-{{ instagramUser.full_name }}
-{{ instagramUser.biography }}
+<p>{{ instagramUser.full_name | uppercase }}</p>
+<p>{{ instagramUser.biography | uppercase }}</p>
 
-<ul>
-  <li *ngFor="let feedItem of feed">
-    <img src="{{ feedItem.image_versions2.candidates[1].url }}" />
-  </li>
-</ul>
+<div class="container">
+    <div class="item" *ngFor="let feedItem of feed">
+      <img src="{{ feedItem.image_versions2.candidates[1].url }}" />
+    </div>
+</div>

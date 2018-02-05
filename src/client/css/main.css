@@ -23,7 +23,6 @@ body {
 /* Set up a default font and some padding to provide breathing room */
 body {
   font-family: Oswald;
-  font-size: 32px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
@@ -70,4 +69,41 @@ button {
 
 button:hover {
   background-color: #28739e;
+}
+
+.flex-header-outer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+
+.flex-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-header-small {
+  padding-right: 15px;
+  font-size: medium;
+  color: dimgray;
+}
+
+a {
+  color: dimgray;
+  text-decoration: none;
+}
+
+.header {
+  font-size: 4vw;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.header-gray {
+  font-size: 4vw;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: dimgray;
 }
